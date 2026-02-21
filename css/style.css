@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+.calculator-container {
+    background-color: #baffc2;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+input, select, button, .result-box {
+    background: transparent;
+    border: 1px dashed red;
+    border-radius: 10px;
+    color: red;
+    font-size: 18px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.input-wrapper {
+    position: relative; 
+    flex: 1;
+    display: flex;
+}
+
+input {
+    width: 100%;
+}
+
+select {
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+    flex-shrink: 0;
+    padding-right: 35px;
+}
+
+button {
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: center;
+    padding: 10px 40px;
+}
+
+button:hover {
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.result-box {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.result-box p {
+    margin: 0;
+}
+
+.history-item {
+    color: #d88f6c;
+}
+.current-item {
+    color: red;
+}
+
+.input-error {
+    border: 2px solid red;
+    background-color: #ffcccc;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    bottom: -18px;
+    left: 5px;
+}
+
+.show-error {
+    display: block;
+}
+
+@media (max-width: 500px) {
+    .input-group {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .input-wrapper {
+        width: 100%;
+    }
+
+    select {
+        align-self: center;
+        width: 100px;
+    }
+}
